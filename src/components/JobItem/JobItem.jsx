@@ -1,8 +1,9 @@
+import { Flex } from 'antd';
 import React, { memo } from 'react';
 import { IconReddit } from '../../assets/icons/IconReddit';
-import { Flex } from 'antd';
-import './jobItem.scss';
 import { LocationIcon } from '../../assets/icons/LocationIcon';
+import './jobItem.scss';
+
 const JobItem = memo(() => {
     return (
         <div className="job-item">

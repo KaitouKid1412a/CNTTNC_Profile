@@ -7,6 +7,7 @@ import ForgotPassword from '../views/ForgotPassword';
 import Login from '../views/Login';
 import Register from '../views/Register';
 import ResetPassword from '../views/ResetPassword';
+import JobDetails from '../views/JobDetails';
 
 export default function RouteComponent() {
     const routeElements = useRoutes([
@@ -49,7 +50,15 @@ export default function RouteComponent() {
                     <FindJob />
                 </FindJobLayout>
             )
-        }
+        },
+        {
+            path: '/job-details',
+            element: (
+                <FindJobLayout>
+                    <JobDetails />
+                </FindJobLayout>
+            ),
+        },
     ]);
     return routeElements;
 }

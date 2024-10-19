@@ -1,0 +1,55 @@
+@import '../../scss/global.scss';
+.find-job {
+    padding: 12px 0 24px;
+    background-color: #f1f2f4;
+    &-title {
+        width: 1280px;
+        margin: 0 auto;
+    }
+    &-details {
+        .form-find-job {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr 1fr;
+            width: 1280px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            justify-content: center;
+            padding: 12px;
+            .ant-input {
+                padding: 6px;
+                font-size: 14px;
+                font-weight: 500;
+                color: $color-date;
+            }
+            .ant-input-affix-wrapper {
+                border-radius: 4px;
+            }
+            .ant-btn {
+                border-radius: 4px;
+                height: 42px;
+                span {
+                    font-weight: 600;
+                }
+            }
+            .ant-form-item-control-input {
+                text-align: center;
+                font-weight: 500;
+                color: #767e94;
+            }
+            .ant-form-item {
+                margin-bottom: 0;
+                width: 100%;
+            }
+        }
+    }
+    &-alls {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 1280px;
+        margin: auto;
+        margin-top: 20px;
+        padding-bottom: 40px;
+    }
+}

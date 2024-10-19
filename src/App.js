@@ -1,4 +1,5 @@
 import RouteComponent from "./routes/routes";
+import '../src/scss/styles.scss';
 
 function App() {
     const routeElement = RouteComponent();

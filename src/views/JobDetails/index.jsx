@@ -1,5 +1,5 @@
-import { Button, Flex } from 'antd';
-import React, { memo } from 'react';
+import { Button, Flex, Form, Input, Modal } from 'antd';
+import React, { memo, useState } from 'react';
 import { IconCalendar } from '../../assets/icons/IconCalendar';
 import { IconClock } from '../../assets/icons/IconClock';
 import { IconEducation } from '../../assets/icons/IconEducation';
@@ -16,6 +16,9 @@ import JobOverviewItem from './JobOverviewItem';
 import JobItem from '../../components/JobItem/JobItem';
 
 const JobDetails = memo(() => {
+    const [form] = Form.useForm();
+    const [open, setOpen] = useState(false);
+
     return (
         <>
             <div className="job-details">
@@ -67,7 +70,9 @@ const JobDetails = memo(() => {
                         <span className="btn-save">
                             <IconSave />
                         </span>
-                        <Button type="primary">Apply Now</Button>
+                        <Button type="primary" onClick={() => setOpen(true)}>
+                            Apply Now
+                        </Button>
                     </Flex>
                     <Flex
                         align="center"
@@ -258,6 +263,41 @@ const JobDetails = memo(() => {
                     <JobItem />
                 </div>
             </div>
+            <Modal
+                title="Apply Job: Senior UX Designer"
+                open={open}
+                onCancel={() => setOpen(false)}
+                footer={[
+                    <Flex key="footer" align="center" justify="space-between">
+                        <Button key="back" onClick={() => {}}>
+                            Cancel
+                        </Button>
+                        ,
+                        <Button
+                            htmlType="submit"
+                            type="primary"
+                            form="apply-job"
+                        >
+                            Apply now
+                        </Button>
+                    </Flex>,
+                ]}
+            >
+                <Form
+                    form={form}
+                    name="apply-job"
+                    id="apply-job"
+                    layout="vertical"
+                    onFinish={() => {}}
+                >
+                    <Form.Item name="resume" label="Choose Resume">
+                        <Input placeholder="Select" />
+                    </Form.Item>
+                    <Form.Item name="coverLetter" label="Cover Letter">
+                        <Input.TextArea placeholder="Cover Letter" rows={4} />
+                    </Form.Item>
+                </Form>
+            </Modal>
         </>
     );
 });

@@ -19,7 +19,7 @@ const Header = memo(() => {
                     className="header-top"
                 >
                     <Flex align="center" gap={24} className="left-content">
-                        <Link to="">Home</Link>
+                        <Link to="/">Home</Link>
                         <Link to="/find-job">Find Job</Link>
                         <Link to="">Find Employees</Link>
                         <Link to="">Dashboard</Link>
